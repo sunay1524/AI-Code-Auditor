@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+.env.local
+backend/.env
+
+# Build outputs
+dist/
+build/
+.oxlintrc.json

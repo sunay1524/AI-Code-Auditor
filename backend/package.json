@@ -1,0 +1,29 @@
+{
+  "name": "project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@langchain/classic": "^1.0.40",
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.2.2",
+    "@langchain/google-genai": "^2.2.0",
+    "@langchain/textsplitters": "^1.0.1",
+    "@octokit/rest": "^22.0.1",
+    "chromadb": "^3.5.0",
+    "clear": "^0.1.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "langchain": "^1.5.3",
+    "mongoose": "^9.7.4",
+    "zod": "^4.4.3"
+  }
+}

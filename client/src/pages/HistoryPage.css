@@ -1,0 +1,197 @@
+/* ======================== HISTORY HEADER ======================== */
+.history-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+}
+
+.history-header {
+  margin-bottom: 2rem;
+}
+
+.history-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.history-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ======================== HISTORY LIST ======================== */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+}
+
+.history-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-color-hover);
+}
+
+.history-card-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-card-repo {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-card-time {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.history-card-center {
+  flex-shrink: 0;
+}
+
+.history-card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.history-card-score {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-card-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-purple);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(139, 92, 246, 0.1);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.history-card-btn:hover {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.history-card-error {
+  font-size: 0.8rem;
+  color: var(--accent-red);
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-card-pending-text {
+  font-size: 0.82rem;
+  color: var(--accent-orange);
+  font-weight: 500;
+}
+
+/* ======================== STATUS BADGES ======================== */
+.status-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-xl);
+}
+
+.badge-completed {
+  color: var(--accent-green);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-pending {
+  color: var(--accent-orange);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.badge-failed {
+  color: var(--accent-red);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ======================== EMPTY STATE ======================== */
+.history-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.history-empty-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.history-empty h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.history-empty p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.history-empty-btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all 0.25s;
+}
+
+.history-empty-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 640px) {
+  .history-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .history-card-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
