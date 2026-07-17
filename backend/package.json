@@ -20,6 +20,7 @@
     "@octokit/rest": "^22.0.1",
     "chromadb": "^3.5.0",
     "clear": "^0.1.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "langchain": "^1.5.3",
