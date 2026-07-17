@@ -152,6 +152,80 @@
   border-left: 3px solid var(--accent-green);
 }
 
+/* Executive Summary Section */
+.report-executive-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.summary-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.summary-section.success h3 {
+  color: var(--accent-green);
+}
+
+.summary-section.danger h3 {
+  color: var(--accent-red);
+}
+
+.summary-section.warning h3 {
+  color: var(--accent-orange);
+}
+
+.summary-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.summary-section li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.summary-section li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.summary-section.success li::before {
+  color: var(--accent-green);
+}
+
+.summary-section.danger li::before {
+  color: var(--accent-red);
+}
+
+.summary-section.warning li::before {
+  color: var(--accent-orange);
+}
+
 /* ======================== RESPONSIVE ======================== */
 @media (max-width: 768px) {
   .report-header {

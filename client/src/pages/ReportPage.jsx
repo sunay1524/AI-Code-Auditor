@@ -55,6 +55,42 @@ function ReportPage() {
         <ScoreRing score={report.documentation?.score} size={80} label="Documentation" />
       </div>
 
+      {/* Executive Key Findings */}
+      <div className="report-executive-summary">
+        {report.strongestAspects?.length > 0 && (
+          <div className="summary-section success">
+            <h3>🌟 Strongest Aspects</h3>
+            <ul>
+              {report.strongestAspects.map((aspect, i) => (
+                <li key={i}>{aspect}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {report.criticalWeaknesses?.length > 0 && (
+          <div className="summary-section danger">
+            <h3>⚠️ Critical Weaknesses</h3>
+            <ul>
+              {report.criticalWeaknesses.map((weakness, i) => (
+                <li key={i}>{weakness}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {report.recommendations?.length > 0 && (
+          <div className="summary-section warning">
+            <h3>💡 Prioritized Recommendations</h3>
+            <ul>
+              {report.recommendations.map((rec, i) => (
+                <li key={i}>{rec}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
       {/* Detail Cards */}
       <div className="report-details">
         {/* Security */}
