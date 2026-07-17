@@ -1,9 +1,10 @@
 import axios from "axios"
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 async function getRepo(repo) {
     try {
-        const response = await axios.post("http://localhost:3001/api/audit/", { repoUrl: repo }, { withCredentials: true });
+        const response = await axios.post(`${API_URL}/api/audit/`, { repoUrl: repo }, { withCredentials: true });
         return response.data;
     }
     catch (err) {
@@ -13,9 +14,9 @@ async function getRepo(repo) {
 
 async function fetchAllRepo(ids = []) {
     try {
-        let url = "http://localhost:3001/api/audit/all";
+        let url = `${API_URL}/api/audit/all`;
         if (ids.length > 0) {
-            url = `http://localhost:3001/api/audit/all?ids=${ids.join(",")}`;
+            url = `${API_URL}/api/audit/all?ids=${ids.join(",")}`;
         }
         const response = await axios.get(url, { withCredentials: true });
         return response.data;
@@ -27,7 +28,7 @@ async function fetchAllRepo(ids = []) {
 
 async function fetchRepobyId(id) {
     try {
-        const response = await axios.get(`http://localhost:3001/api/audit/${id}`, { withCredentials: true });
+        const response = await axios.get(`${API_URL}/api/audit/${id}`, { withCredentials: true });
         return response.data;
     }
     catch (err) {
