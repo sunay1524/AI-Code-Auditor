@@ -4,6 +4,10 @@ const {
     SystemMessage,
     HumanMessage
 } = require("@langchain/core/messages");
+const { SecuritySchema } = require("./SecurityAgent");
+const { ArchitectureSchema } = require("./ArchitectureAgent");
+const { PerformanceSchema } = require("./PerformanceAgent");
+const { DocumentationSchema } = require("./DocumentationAgent");
 
 const CoordinatorSchema = z.object({
     summary: z.string(),
@@ -11,10 +15,10 @@ const CoordinatorSchema = z.object({
     strongestAspects: z.array(z.string()),
     criticalWeaknesses: z.array(z.string()),
     recommendations: z.array(z.string()),
-    security: z.any(),
-    architecture: z.any(),
-    performance: z.any(),
-    documentation: z.any()
+    security: SecuritySchema,
+    architecture: ArchitectureSchema,
+    performance: PerformanceSchema,
+    documentation: DocumentationSchema
 });
 const systemPrompt = `
 You are a Principal Software Engineering Manager responsible for conducting final technical reviews.
