@@ -103,24 +103,28 @@ function ReportPage() {
             </span>
           </div>
           <p className="report-card-summary">{report.security?.summary}</p>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">⚠️ Issues</h4>
-            <ul className="report-card-list">
-              {report.security?.issues?.map((issue, i) => (
-                <li key={i} className="report-card-list-item issue">
-                  <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">💡 Recommendations</h4>
-            <ul className="report-card-list">
-              {report.security?.recommendations?.map((rec, i) => (
-                <li key={i} className="report-card-list-item recommendation">{rec}</li>
-              ))}
-            </ul>
-          </div>
+          {report.security?.issues?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">⚠️ Issues</h4>
+              <ul className="report-card-list">
+                {report.security?.issues?.map((issue, i) => (
+                  <li key={i} className="report-card-list-item issue">
+                    <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {report.security?.recommendations?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">💡 Recommendations</h4>
+              <ul className="report-card-list">
+                {report.security?.recommendations?.map((rec, i) => (
+                  <li key={i} className="report-card-list-item recommendation">{rec}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Architecture */}
@@ -143,14 +147,16 @@ function ReportPage() {
               </ul>
             </div>
           )}
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">⚠️ Weaknesses</h4>
-            <ul className="report-card-list">
-              {report.architecture?.weaknesses?.map((w, i) => (
-                <li key={i} className="report-card-list-item issue">{w}</li>
-              ))}
-            </ul>
-          </div>
+          {report.architecture?.weaknesses?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">⚠️ Weaknesses</h4>
+              <ul className="report-card-list">
+                {report.architecture?.weaknesses?.map((w, i) => (
+                  <li key={i} className="report-card-list-item issue">{w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Performance */}
@@ -163,24 +169,28 @@ function ReportPage() {
             </span>
           </div>
           <p className="report-card-summary">{report.performance?.summary}</p>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">⚠️ Issues</h4>
-            <ul className="report-card-list">
-              {report.performance?.issues?.map((issue, i) => (
-                <li key={i} className="report-card-list-item issue">
-                  <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">💡 Recommendations</h4>
-            <ul className="report-card-list">
-              {report.performance?.recommendations?.map((rec, i) => (
-                <li key={i} className="report-card-list-item recommendation">{rec}</li>
-              ))}
-            </ul>
-          </div>
+          {report.performance?.issues?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">⚠️ Issues</h4>
+              <ul className="report-card-list">
+                {report.performance?.issues?.map((issue, i) => (
+                  <li key={i} className="report-card-list-item issue">
+                    <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {report.performance?.recommendations?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">💡 Recommendations</h4>
+              <ul className="report-card-list">
+                {report.performance?.recommendations?.map((rec, i) => (
+                  <li key={i} className="report-card-list-item recommendation">{rec}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Documentation */}
@@ -193,24 +203,28 @@ function ReportPage() {
             </span>
           </div>
           <p className="report-card-summary">{report.documentation?.summary}</p>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">⚠️ Issues</h4>
-            <ul className="report-card-list">
-              {report.documentation?.issues?.map((issue, i) => (
-                <li key={i} className="report-card-list-item issue">
-                  <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="report-card-section">
-            <h4 className="report-card-section-title">💡 Recommendations</h4>
-            <ul className="report-card-list">
-              {report.documentation?.recommendations?.map((rec, i) => (
-                <li key={i} className="report-card-list-item recommendation">{rec}</li>
-              ))}
-            </ul>
-          </div>
+          {report.documentation?.issues?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">⚠️ Issues</h4>
+              <ul className="report-card-list">
+                {report.documentation?.issues?.map((issue, i) => (
+                  <li key={i} className="report-card-list-item issue">
+                    <strong>[{issue.severity || 'Medium'}]</strong> {issue.title || issue.evidence || issue}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {report.documentation?.recommendations?.length > 0 && (
+            <div className="report-card-section">
+              <h4 className="report-card-section-title">💡 Recommendations</h4>
+              <ul className="report-card-list">
+                {report.documentation?.recommendations?.map((rec, i) => (
+                  <li key={i} className="report-card-list-item recommendation">{rec}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
